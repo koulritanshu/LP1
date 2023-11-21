@@ -1,0 +1,2 @@
+INCR Area, &INCR_VAL = 3
+COMPUTE Area, 3

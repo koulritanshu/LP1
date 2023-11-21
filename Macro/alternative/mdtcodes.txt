@@ -1,0 +1,56 @@
+1 MOVER (P,3) (P,1)
+2 ADD (P,3) ='1'
+3 MOVER (P,4) (P,2)
+4 ADD (P,3) ='5'
+5 MEND  
+6 MOVER (P,3) (P,1)
+7 MOVER (P,4) (P,2)
+8 ADD (P,3) ='15'
+9 ADD (P,4) ='10'
+10 MEND
+
+Index Parameter Value
+1     A         AREG
+2     B
+3     U         CREG
+4     V         DREG
+
+Name PP KP MDTP KPDTP
+M1   2  2  1    1
+M2   2  2  6    3
+
+M1 10, 20, &B=CREG
+M2 100, 200, &V=AREG, &U=BREG
+
+
+
+
+1 MOVER (P,3) (P,1)
+2 ADD (P,3) (P,2)
+3 MOVEM (P,3) (P,1)
+4 MEND  
+5 MOVER (P,3) (P,1)
+6 ADD (P,3) (P,2)
+7 MOVEM (P,3) (P,1)
+8 MEND  
+9 MOVER (P,3) (P,1)
+10 ADD (P,3) (P,2)
+11 MOVEM (P,3) (P,1)
+12 MEND
+
+Index Parameters Value
+1     MEM_VAL
+2     INCR_VAL
+3     REG
+4     MEM_VAL
+5     INCR_VAL
+6     REG        AREG
+
+Name    PP KP MDTP KPDTP
+INCR    3  0  1    -
+INCR_M  0  3  5    1
+INCR_D  0  3  9    4
+
+INCR A, B, AREG
+INCR_M MEM_VAL=A, INCR_VAL=B, REG=AREG
+INCR_D INCR_VAL=B, REG=AREG, MEM_VAL=A
